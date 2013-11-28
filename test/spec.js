@@ -74,7 +74,6 @@ describe('MomentRange#toJSON', function() {
 describe('MomentRange#toString', function() {
   it('should return a string representation', function() {
     var range = MomentRange(from, to);
-    console.log(range.toString());
     expect(range.toString().indexOf('[MomentRange')).to.eql(0);
   })
 })
