@@ -1,0 +1,21 @@
+{
+  "name": "moment-range",
+  "repo": "chemzqm/moment-range",
+  "description": "date range representing with moment inside",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "component/moment": "*"
+  },
+  "development": {
+    "visionmedia/mocha": "*",
+    "chaijs/chai": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "template.js"
+  ],
+  "remotes": []
+}

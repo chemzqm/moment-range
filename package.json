@@ -1,0 +1,21 @@
+{
+  "name": "moment-range",
+  "version": "0.0.1",
+  "description": "date range representing using moment",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "author": "chemzqm@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "~2.4.0"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.14.0"
+  }
+}
