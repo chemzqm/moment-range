@@ -18,4 +18,4 @@ clean:
 test:
 	@mocha -R list
 
-.PHONY: clean start
+.PHONY: clean start test
