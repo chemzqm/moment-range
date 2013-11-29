@@ -27,17 +27,21 @@
 
   Set / get the `to` moment date.
 
+### .intersect(MomentRange)
+
+  Check if this range intersect with other moment range.
+
 ### .within(MomentRange)
 
-  Check if  this range obj is a subset of `MomentRange`.
+  Check if this range obj is a subset of `MomentRange`.
 
-### .contains(String|Number|Date|Array)
+### .include(String|Number|Date|Array)
 
   Check if MomentRange contains the date.
 
-### .getDates()
+### .getDates([format])
 
-  Get all the moment dates within the date range.
+  Get all the moment dates array or formatted string array within the date range.
 
 ### .toJSON()
 

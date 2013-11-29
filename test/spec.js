@@ -4,7 +4,7 @@ var moment = require('moment');
 var MomentRange = require('..');
 
 var from = '2013-11-06';
-var to = '2013-11-17';
+var to = '2013-11-11';
 
 describe('MomentRange(from, to)', function() {
 
@@ -47,17 +47,43 @@ describe('MomentRange#within', function() {
   })
 })
 
-describe('MomentRange#contains', function() {
-  it('should contains the date', function() {
+describe('MomentRange#include', function() {
+  it('should include the date', function() {
     var range = MomentRange(from, to);
     var d = '2013-11-10';
-    expect(range.contains(d)).to.be.true;
+    expect(range.include(d)).to.be.true;
   })
 
-  it('should not contains the date', function() {
+  it('should not include the date', function() {
     var range = MomentRange(from, to);
     var d = '2013-12-10';
-    expect(range.contains(d)).to.be.false;
+    expect(range.include(d)).to.be.false;
+  })
+})
+
+describe('MomentRange#getDates', function() {
+  it('should get the moment date array', function() {
+    var range = MomentRange(from, to);
+    var dates = range.getDates('YYYY-MM-DD');
+    expect(dates).to.eql([ '2013-11-06', '2013-11-07', '2013-11-08', '2013-11-09', '2013-11-10', '2013-11-11' ]);
+  })
+})
+
+describe('MomentRange#intersect', function() {
+  it('should intersect with other range', function() {
+    var range = new MomentRange(from, to);
+    var f = moment(from).add('days', 1);
+    var t = moment(to).add('days', 10);
+    var oRange = new MomentRange(f, t);
+    expect(range.intersect(oRange)).to.be.true;
+  })
+
+  it('should not intersect with other range', function() {
+    var range = new MomentRange(from, to);
+    var f = moment(to).add('days', 1);
+    var t = moment(to).add('days', 10);
+    var oRange = new MomentRange(f, t);
+    expect(range.intersect(oRange)).to.be.false;
   })
 })
 
