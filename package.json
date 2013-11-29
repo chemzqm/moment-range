@@ -1,5 +1,5 @@
 {
-  "name": "moment-range",
+  "name": "moment-ranger",
   "version": "0.0.1",
   "description": "date range representing using moment",
   "main": "index.js",
