@@ -12,7 +12,16 @@
 
   Install with npm:
 
-    $ npm install moment-range
+    $ npm install moment-ranger
+
+## Example
+
+``` js
+var range = new MomentRange('2013-11-06', '2013-11-22');
+range.each(function(moment){
+  console.log(moment.format('YYYY-MM-DD')) //log each days within the range
+})
+```
 
 ## API
 
@@ -33,9 +42,21 @@
 
   Check if this range intersect with other moment range.
 
+### .equal(MomentRange)
+
+  Check if this range is the same as other moment range.
+
+### .diff([unit])
+
+  Get the difference in milisecond or the given unit(could be `years`, `months`, `weeks`, `days`, `hours`, `minutes`, and `seconds`).
+
 ### .within(MomentRange)
 
   Check if this range obj is a subset of `MomentRange`.
+
+### .each([unit], fn)
+
+  Call the fn with all the `moment` divided by unit (default is `days`, all available unit is the same as diff method) and index.
 
 ### .include(String|Number|Date|Array)
 

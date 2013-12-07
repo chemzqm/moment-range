@@ -87,6 +87,52 @@ describe('MomentRange#intersect', function() {
   })
 })
 
+describe('MomentRange#equal', function() {
+  it('should be the same MomentRange' , function() {
+    var range = new MomentRange(from, to);
+    var oRange = new MomentRange(from, to);
+    expect(range.equal(oRange)).to.be.true;
+  })
+
+  it('should not be the same MomentRange' , function() {
+    var range = new MomentRange(from, to);
+    var t = moment(to).add('days', 1);
+    var oRange = new MomentRange(from, t);
+    expect(range.equal(oRange)).to.be.false;
+  })
+})
+
+describe('MomentRange#diff', function() {
+  it('should get the difference in milisecond', function() {
+    var range = new MomentRange(from, to);
+    var df = range.diff();
+    expect(df).to.eql((new Date(to)) - (new Date(from)));
+  })
+
+  it('should get the difference in days', function() {
+    var range = new MomentRange(from, to);
+    var df = moment(to).diff(from, 'days');
+    expect(range.diff('days')).to.eql(df);
+  })
+})
+
+describe('MomentRange#each', function() {
+  it('should iterate with each day in the range', function() {
+    var range = new MomentRange(from, to);
+    range.each(function(day, i) {
+      var d = day.subtract('days', i);
+      expect(d.isSame(from)).to.be.true;
+    })
+  })
+
+  it('should iterate with each year in the range', function() {
+    var range = new MomentRange(from, moment(to).add('years', 1));
+    range.each('years', function(day, i) {
+      expect(day.format('YYYY') - i).to.eql(moment(from).year());
+    })
+  })
+})
+
 describe('MomentRange#toJSON', function() {
   it('should return a json representation', function() {
     var range = MomentRange(from, to);

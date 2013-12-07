@@ -44,6 +44,29 @@ MomentRange.prototype.intersect = function (range) {
   return !(this._from.isAfter(t) || this._to.isBefore(f));
 }
 
+MomentRange.prototype.equal = function (range) {
+  var f = range.from();
+  var t = range.to();
+  return this._from.isSame(f) && this._to.isSame(t);
+}
+
+MomentRange.prototype.diff = function (unit) {
+  return this._to.diff(this._from, unit);
+}
+
+MomentRange.prototype.each = function (unit, fn) {
+  if (arguments.length < 2) {
+    fn = unit;
+    unit = 'days';
+  }
+  var d = this._from, i = 0;
+  while(this.include(d)){
+    fn(d.clone(), i);
+    d = d.add(unit, 1);
+    i++;
+  }
+}
+
 MomentRange.prototype.within = function (range) {
   if (!this._from || !this._to) throw new Error('start date/end date not defined');
   var f = this._from;
@@ -53,7 +76,7 @@ MomentRange.prototype.within = function (range) {
 
 MomentRange.prototype.include = function (date) {
   var d = moment(date);
-  return d.isAfter(this._from) && d.isBefore(this._to);
+  return (!d.isBefore(this._from)) && (!d.isAfter(this._to));
 }
 
 MomentRange.prototype.toJSON = function () {
