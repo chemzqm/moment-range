@@ -1,3 +1,5 @@
+[![Build Status](https://secure.travis-ci.org/chemzqm/moment-range.png)](http://travis-ci.org/chemzqm/moment-range)
+
 # moment-range
 
   date range representing with moment inside.
