@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "make test-coveralls"
   },
   "author": "chemzqm@gmail.com",
   "license": "MIT",
@@ -16,6 +16,9 @@
   },
   "devDependencies": {
     "chai": "~1.8.1",
-    "mocha": "~1.14.0"
+    "mocha": "~1.14.0",
+    "mocha-lcov-reporter": "0.0.1",
+    "coveralls": "~2.6.0",
+    "istanbul": "~0.1.46"
   }
 }
