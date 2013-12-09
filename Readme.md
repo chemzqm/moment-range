@@ -1,3 +1,4 @@
+[![Dependency Status](https://david-dm.org/chemzqm/moment-range.png)](https://david-dm.org/chemzqm/moment-range)
 [![Build Status](https://secure.travis-ci.org/chemzqm/moment-range.png)](http://travis-ci.org/chemzqm/moment-range)
 [![Coverage Status](https://coveralls.io/repos/chemzqm/moment-range/badge.png?branch=master)](https://coveralls.io/r/chemzqm/moment-range?branch=master)
 
