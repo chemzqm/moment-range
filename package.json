@@ -1,6 +1,11 @@
 {
   "name": "moment-ranger",
   "version": "0.1.2",
+  "keywords": [
+    "date",
+    "moment",
+    "range"
+  ]
   "description": "date range representing using moment",
   "repository": "git://github.com/chemzqm/moment-range.git",
   "main": "index.js",
