@@ -5,7 +5,7 @@
     "date",
     "moment",
     "range"
-  ]
+  ],
   "description": "date range representing using moment",
   "repository": "git://github.com/chemzqm/moment-range.git",
   "main": "index.js",
