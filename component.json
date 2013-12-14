@@ -2,7 +2,7 @@
   "name": "moment-range",
   "repo": "chemzqm/moment-range",
   "description": "date range representing with moment inside",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "keywords": [],
   "dependencies": {
     "component/moment": "*"
