@@ -1,7 +1,7 @@
 /* global describe,it*/
 var expect = require('chai').expect;
 var moment = require('moment');
-var MomentRange = require('..');
+var MomentRange = (typeof window === undefined) ? require('moment-ranger') : require('..');
 
 var from = '2013-11-06';
 var to = '2013-11-11';

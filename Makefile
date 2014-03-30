@@ -1,10 +1,6 @@
-
 build: components index.js
 	@component build --dev
 	@touch build
-
-start:
-	@component serve &
 
 components: component.json
 	@component install --dev
@@ -13,7 +9,7 @@ clean:
 	rm -fr build components
 
 test:
-	@mocha -R list
+	@./node_modules/.bin/mocha -R list
 
 test-cov:
 	@./node_modules/.bin/istanbul cover \
