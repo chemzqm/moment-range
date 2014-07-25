@@ -8,8 +8,10 @@
     "component/moment": "*"
   },
   "development": {
-    "visionmedia/mocha": "*",
-    "chaijs/chai": "*"
+    "dependencies": {
+      "visionmedia/mocha": "*",
+      "chaijs/chai": "*"
+    }
   },
   "license": "MIT",
   "main": "index.js",
