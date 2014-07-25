@@ -67,6 +67,13 @@ describe('MomentRange#getDates', function() {
     var dates = range.getDates('YYYY-MM-DD');
     expect(dates).to.eql([ '2013-11-06', '2013-11-07', '2013-11-08', '2013-11-09', '2013-11-10', '2013-11-11' ]);
   })
+  it('can be called several times', function() {
+    var range = MomentRange(from, to);
+    var dates = range.getDates('YYYY-MM-DD');
+    expect(dates).to.eql([ '2013-11-06', '2013-11-07', '2013-11-08', '2013-11-09', '2013-11-10', '2013-11-11' ]);
+    var dates = range.getDates('YYYY-MM-DD');
+    expect(dates).to.eql([ '2013-11-06', '2013-11-07', '2013-11-08', '2013-11-09', '2013-11-10', '2013-11-11' ]);
+  })
 })
 
 describe('MomentRange#intersect', function() {

@@ -29,7 +29,7 @@ MomentRange.prototype.normalize = function () {
 MomentRange.prototype.getDates = function (format) {
   if (!this._from || !this._to) throw new Error('start date/end date not defined');
   var res = [];
-  var d = this._from;
+  var d = this._from.clone();
   while(!d.isAfter(this._to)) {
     var o = format ? d.format(format) : d.clone();
     res.push(o);
